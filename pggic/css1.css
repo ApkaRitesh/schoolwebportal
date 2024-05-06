@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f3fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.main-section {
+  width: 100%;
+  float: left;
+  padding: 50px 0;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 600;
+  border-bottom: 2px solid #46b7c1;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery img {
+  width: 30%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  background: #333;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.footer-sect {
+  float: left;
+  margin-right: 20px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.footer-sect a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.footer-sect a:hover {
+  color: #46b7c1;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #46b7c1;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover,
+.tab.active {
+  background-color: #357d88;
+}
+#map {
+  height: 400px; /* Set the height of the map container */
+  width: 100%; /* Set the width of the map container */
+}
+
+/* Style the marker */
+.gm-style-iw {
+  background-color: #fff; /* Background color of the info window */
+  border-radius: 5px; /* Border radius of the info window */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow of the info window */
+}
+
+/* Style the marker icon */
+.gm-style-iw::after {
+  content: ''; /* Add empty content */
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff; /* Triangle shape below the info window */
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

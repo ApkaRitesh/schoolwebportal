@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="css1.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT. GURU PARASAD GAYAPARASAD INTER COLLEGE</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: #333;
+      background-color: #f0f3fa;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 style="font-size: 42px; margin-top: 20px; color: #d54747;">PT. GURU PARASAD GAYAPARASAD INTER COLLEGE</h1>
+      <nav>
+        <a href="HOME.html" class="tab">Home</a>
+        <a href="aboutus.html" class="tab">About Us</a>
+        <a href="#" class="tab">Events</a>
+        <a href="#" class="tab">Gallery</a>
+        <a href="#" class="tab">Notice Board</a>
+        <a href="#" class="tab">Blogs</a>
+        <a href="#" class="tab">Contact Us</a>
+        <a href="#" class="tab" onclick="showLocation()">Show Location</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <!-- Map Section -->
+    <div id="map"></div>
+  </div>
+
+  <script>
+    function showLocation() {
+      const schoolLocation = {
+        lat: 40.7128, // Replace with the actual latitude of your school
+        lng: -74.0060, // Replace with the actual longitude of your school
+      };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: schoolLocation,
+        zoom: 15,
+      });
+      new google.maps.Marker({
+        position: schoolLocation,
+        map,
+        title: "PT. GURU PARASAD GAYAPARASAD INTER COLLEGE",
+      });
+    }
+  </script>
+
+  <!-- Add Google Maps API Script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX5lRln1pyTeSOKy25YCcG-wR7LoSG1TE&callback=initMap"></script>
+</body>
+</html>

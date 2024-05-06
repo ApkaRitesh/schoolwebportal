@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT. GURU PARASAD GAYAPARASAD INTER COLLEGE</title>
+  <link rel="stylesheet" href="css1.css">
+ 
+</head>
+<body>
+  <header>
+    <div class="container">
+    <!--<img src="sachool_logo.jpg" class="logo" alt="PT. GURU PARASAD GAYAPARASAD INTER COLLEGE Logo">-->
+      <h1 style="font-size: 42px; margin-top: 20px color #d54747">PT. GURU PARASAD GAYAPARASAD INTER COLLEGE</h1>
+      <nav>
+        <a href="HOME.html" class="tab">Home</a>
+        <a href="aboutus.html" class="tab">About Us</a>
+        <a href="#" class="tab">Events</a>
+        <a href="#" class="tab">Gallery</a>
+        <a href="#" class="tab">Notice Board</a>
+        <a href="#" class="tab">Blogs</a>
+        <a href="#" class="tab">Contact Us</a>
+        <a href="#" class="tab" onclick="showLocation()">Show Location</a> <!-- Add this button for location sharing -->
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+ <!-- Gallery Section -->
+<div class="main-section gallery">
+  <h2  class="heading" style="color: #f0f3fa;">Explore Gallery</h2>
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="pggic1.png" alt="Gallery Image 1">
+      <img src="pggic2.png" alt="Gallery Image 2">
+      <img src="pggic3.png" alt="Gallery Image 3">
+      <img src="pggic4.png" alt="Gallery Image 4">
+      <img src="news8.jpg" alt="Gallery Image 5"><img src="news5.jpg" alt="Gallery Image 5"><img src="news3.jpg" alt="Gallery Image 5">
+      <img src="news1.jpg" alt="Gallery Image 6">
+      <img src="news2.jpg" alt="Gallery Image 7">
+      <img src="news3.jpg" alt="Gallery Image 8">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+</div>
+
+<!-- Map Section -->
+<div id="map"></div>
+
+    <!-- Campus, Events and Notice Board Section -->
+    <div class="main-section">
+      <div class="event">
+        <h2 class="heading" style="color: #46b7c1;">Latest Campus News</h2>
+        <marquee direction="up" scrollamount="10" style="height:340px;">
+          <ul>
+            <li style="color: #333;"><img src="news1.jpg" alt="News 1"> </li>
+            <li style="color: #333;"><img src="news2.jpg" alt="News 2"> </li>
+            <li style="color: #333;"><img src="news3.jpg" alt="News 3"> </li>
+            <li style="color: #333;"><img src="news5.jpg" alt="News 4"> </li>
+            <li style="color: #333;"><img src="news8.jpg" alt="News 5"> </li>
+            <li style="color: #333;"><img src="news5.png" alt="News 6"> </li>
+          </ul>
+        </marquee>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-sect">
+        </div>
+      <div class="footer-sect">
+        <a href="#" style="color: #46b7c1;">Home</a>
+        <a href="aboutus.html" style="color: #46b7c1;">About us</a>
+        <a href="" style="color: #46b7c1;">Tutorial</a>
+        <a href="#" style="color: #46b7c1;">Event</a>
+        <a href="#" style="color: #46b7c1;">Gallery</a>
+        <a href="#" style="color: #46b7c1;">Press Release</a>
+        <a href="#" style="color: #46b7c1;">Courses</a>
+        <a href="#" style="color: #46b7c1;">Contact Us</a>
+      </div>
+      <div class="footer-sect">
+        <img src="facebook_icon.png" alt="Facebook">
+        <img src="twitter.png" alt="Twitter">
+        <img src="linkdin_icon.png" alt="LinkedIn">
+        <img src="instagaram_icon.png" alt="Instagram">
+      </div>
+    </div>
+  </footer>
+  <div class="blank" style="background-color: black;"><h1></h1>new</div>
+
+  <script src="script.js"></script>
+
+  <!-- Add Google Maps API Script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX5lRln1pyTeSOKy25YCcG-wR7LoSG1TE&callback=initMap">
+    function initMap() {
+      // Initialize the map
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+      });
+    }
+
+    function showLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          const map = new google.maps.Map(document.getElementById("map"), {
+            center: userLocation,
+            zoom: 15,
+          });
+          new google.maps.Marker({
+            position: userLocation,
+            map,
+            title: "Location",
+          });
+        });
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+  </script>
+</body>
+</html>
